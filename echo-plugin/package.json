@@ -5,7 +5,7 @@
   "description": "Sample echo plugin for native plugin content-sync demo",
   "main": "index.js",
   "scripts": {
-    "build": "xcodebuild -configuration Release CONFIGURATION_BUILD_DIR=$PWD/build -scheme echo-plugin",
+    "build": "xcodebuild -configuration Release CONFIGURATION_BUILD_DIR=$PWD/build -target echo",
         "prebuild": "npm install",
     "codesign-verify": "npm run build > /dev/null && codesign --verify build/echo.cdvplugin",
     "codesign-info": "npm run build > /dev/null && codesign -vv -d build/echo.cdvplugin"
