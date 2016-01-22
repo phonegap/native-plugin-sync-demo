@@ -24,7 +24,9 @@
 	"codesign-verify" : "npm run codesign-verify-plugin && npm run codesign-verify-app",
 	    "codesign-verify-app" : "codesign --verify demo-app/platforms/ios/build/device/demo-app.app",
 	    "codesign-verify-plugin" : "pushd echo-plugin && npm run codesign-verify && popd",
-		"precodesign-verify" : "npm run build > /dev/null"
+		"precodesign-verify" : "npm run build > /dev/null",
+		
+	"httpserver" : "echo `ipconfig getifaddr en0`:8080 && python -m SimpleHTTPServer 8080"
 
   },
   "repository": {
