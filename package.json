@@ -1,0 +1,35 @@
+{
+  "name": "native-plugin-sync-demo",
+  "version": "1.0.0",
+  "description": "Apache Cordova native plugin content-sync demo",
+  "private" : true,
+  "main": "index.js",
+  "scripts": {
+	  
+	"build": "npm run build-plugin && npm run build-app",
+	    "build-plugin" : "pushd echo-plugin && npm run build > /dev/null && popd",
+	    "build-app" : "pushd demo-app && cordova prepare && cordova build --device > /dev/null && popd",
+		"postbuild" : "",
+	
+	"package" : "npm run package-plugin && npm run package-app",
+	    "package-app" : "pushd demo-app && zip -r ../package.zip www && popd",
+	    "package-plugin" : "pushd echo-plugin/build && zip -r ../../package.zip echo.cdvplugin && popd",
+		"prepackage" : "npm run build > /dev/null",
+
+	"codesign-info" : "npm run codesign-info-plugin && npm run codesign-info-app",
+	    "codesign-info-app" : "codesign -vv -d demo-app/platforms/ios/build/device/demo-app.app",
+	    "codesign-info-plugin" : "codesign -vv -d echo-plugin/build/echo.cdvplugin",
+		"precodesign-info" : "npm run build > /dev/null"
+
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shazron/native-plugin-sync-demo.git"
+  },
+  "author": "Shazron Abdullah",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/shazron/native-plugin-sync-demo/issues"
+  },
+  "homepage": "https://github.com/shazron/native-plugin-sync-demo#readme"
+}
