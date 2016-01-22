@@ -1,6 +1,7 @@
 #import <Cordova/CDVPlugin.h>
+#import "namespacing.h"
 
-@interface EchoPlugin : CDVPlugin
+@interface NS(EchoPlugin) : CDVPlugin
 
 - (void) echo:(CDVInvokedUrlCommand*)command;
 

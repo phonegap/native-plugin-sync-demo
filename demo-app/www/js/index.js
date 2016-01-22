@@ -26,6 +26,29 @@ document.getElementById("echo-test-button").addEventListener("click",
     } 
 );
 
+document.getElementById("contentsync-test-button").addEventListener("click", contentSync);
+
+function contentSync() {
+    var sync = ContentSync.sync({ src: 'http://192.168.1.42:8080/package.zip', id: 'plugins-2', loadNativePlugins: true });
+    
+    sync.on('progress', function(data) {
+        console.log('Progress: ' + data.progress);        
+    });
+
+    sync.on('complete', function(data) {
+        console.log('Complete: ' + data.localPath);
+        alert('Sync complete');
+    });
+
+    sync.on('error', function(e) {
+        console.log('Error: ' + e);
+    });
+
+    sync.on('cancel', function() {
+        console.log('Cancelled');
+    });
+}
+
 var app = {
     // Application Constructor
     initialize: function() {
