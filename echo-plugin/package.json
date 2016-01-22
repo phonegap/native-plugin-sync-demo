@@ -1,19 +1,22 @@
 {
   "name": "echo-plugin",
   "version": "1.0.0",
-  "private" : true,
+  "private": true,
   "description": "Sample echo plugin for native plugin content-sync demo",
   "main": "index.js",
   "scripts": {
-	"build": "xcodebuild -configuration Release CONFIGURATION_BUILD_DIR=$PWD/build -scheme echo-plugin",
-	    "prebuild" : "npm install",
-	"verify": "npm run build && codesign --verify build/echo.cdvplugin",
-	"identify" : "npm run build && codesign -vv -d build/echo.cdvplugin"
+    "build": "xcodebuild -configuration Release CONFIGURATION_BUILD_DIR=$PWD/build -scheme echo-plugin",
+        "prebuild": "npm install",
+    "codesign-verify": "npm run build > /dev/null && codesign --verify build/echo.cdvplugin",
+    "codesign-info": "npm run build > /dev/null && codesign -vv -d build/echo.cdvplugin"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/shazron/native-plugin-sync-demo.git"
   },
   "author": "Shazron Abdullah",
-  "license": "Apache-2.0"
+  "license": "Apache-2.0",
+  "devDependencies": {
+    "cordova-ios": "^4.0.1"
+  }
 }

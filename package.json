@@ -18,8 +18,13 @@
 
 	"codesign-info" : "npm run codesign-info-plugin && npm run codesign-info-app",
 	    "codesign-info-app" : "codesign -vv -d demo-app/platforms/ios/build/device/demo-app.app",
-	    "codesign-info-plugin" : "codesign -vv -d echo-plugin/build/echo.cdvplugin",
-		"precodesign-info" : "npm run build > /dev/null"
+	    "codesign-info-plugin" : "pushd echo-plugin && npm run codesign-info && popd",
+		"precodesign-info" : "npm run build > /dev/null",
+
+	"codesign-verify" : "npm run codesign-verify-plugin && npm run codesign-verify-app",
+	    "codesign-verify-app" : "codesign --verify demo-app/platforms/ios/build/device/demo-app.app",
+	    "codesign-verify-plugin" : "pushd echo-plugin && npm run codesign-verify && popd",
+		"precodesign-verify" : "npm run build > /dev/null"
 
   },
   "repository": {
