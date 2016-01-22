@@ -7,8 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		3076DC8B1C51ACD700C02CDF /* echo-plugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 3076DC8A1C51ACD700C02CDF /* echo-plugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		3076DC9E1C51AF8B00C02CDF /* EchoPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 3076DC9C1C51AF8B00C02CDF /* EchoPlugin.h */; };
+		3076DC8B1C51ACD700C02CDF /* echo.h in Headers */ = {isa = PBXBuildFile; fileRef = 3076DC8A1C51ACD700C02CDF /* echo.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3076DC9E1C51AF8B00C02CDF /* EchoPlugin.h in Headers */ = {isa = PBXBuildFile; fileRef = 3076DC9C1C51AF8B00C02CDF /* EchoPlugin.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		3076DC9F1C51AF8B00C02CDF /* EchoPlugin.m in Sources */ = {isa = PBXBuildFile; fileRef = 3076DC9D1C51AF8B00C02CDF /* EchoPlugin.m */; };
 		3076DCA01C51AFD600C02CDF /* libCordova.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 3076DC971C51ADAE00C02CDF /* libCordova.a */; };
 /* End PBXBuildFile section */
@@ -32,7 +32,7 @@
 
 /* Begin PBXFileReference section */
 		3076DC871C51ACD700C02CDF /* echo.cdvplugin */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = echo.cdvplugin; sourceTree = BUILT_PRODUCTS_DIR; };
-		3076DC8A1C51ACD700C02CDF /* echo-plugin.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "echo-plugin.h"; sourceTree = "<group>"; };
+		3076DC8A1C51ACD700C02CDF /* echo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = echo.h; sourceTree = "<group>"; };
 		3076DC8C1C51ACD700C02CDF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3076DC921C51ADAE00C02CDF /* CordovaLib.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = CordovaLib.xcodeproj; path = "node_modules/cordova-ios/CordovaLib/CordovaLib.xcodeproj"; sourceTree = "<group>"; };
 		3076DC9A1C51AE9D00C02CDF /* build.xcconfig */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xcconfig; path = build.xcconfig; sourceTree = "<group>"; };
@@ -72,7 +72,7 @@
 		3076DC891C51ACD700C02CDF /* src */ = {
 			isa = PBXGroup;
 			children = (
-				3076DC8A1C51ACD700C02CDF /* echo-plugin.h */,
+				3076DC8A1C51ACD700C02CDF /* echo.h */,
 				3076DC8C1C51ACD700C02CDF /* Info.plist */,
 				3076DC9A1C51AE9D00C02CDF /* build.xcconfig */,
 				3076DC9C1C51AF8B00C02CDF /* EchoPlugin.h */,
@@ -98,7 +98,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3076DC9E1C51AF8B00C02CDF /* EchoPlugin.h in Headers */,
-				3076DC8B1C51ACD700C02CDF /* echo-plugin.h in Headers */,
+				3076DC8B1C51ACD700C02CDF /* echo.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
