@@ -16,6 +16,16 @@
  * specific language governing permissions and limitations
  * under the License.
  */
+
+document.getElementById("echo-test-button").addEventListener("click",
+    function() {
+        var msg = 'This is a test.';
+        cordova.echo(function(echo) {
+            alert(echo);
+        }, null, msg);
+    } 
+);
+
 var app = {
     // Application Constructor
     initialize: function() {
@@ -33,9 +43,6 @@ var app = {
     // The scope of 'this' is the event. In order to call the 'receivedEvent'
     // function, we must explicitly call 'app.receivedEvent(...);'
     onDeviceReady: function() {
-        cordova.echo(function(echo) {
-            alert(echo);
-        }, null, "Hey it's my echo.");
         app.receivedEvent('deviceready');
     },
     // Update DOM on a Received Event

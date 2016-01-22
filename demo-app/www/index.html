@@ -34,6 +34,9 @@
         <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width">
         <link rel="stylesheet" type="text/css" href="css/index.css">
         <title>Hello World</title>
+        <script>
+            window.onerror = function(err,fn,ln) {alert("ERROR:" + err + ", " + fn + ":" + ln);};
+        </script>
     </head>
     <body>
         <div class="app">
@@ -41,6 +44,7 @@
             <div id="deviceready" class="blink">
                 <p class="event listening">Connecting to Device</p>
                 <p class="event received">Device is Ready</p>
+                <button id="echo-test-button">ECHO TEST</button>
             </div>
         </div>
         <script type="text/javascript" src="cordova.js"></script>
