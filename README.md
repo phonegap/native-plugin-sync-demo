@@ -45,3 +45,13 @@ Run this to see all the codesigning identities available on your machine.
 
 Runs a simple http server for the demo at port 8080.
 
+
+## Updating a Plugin
+
+In `echo-plugin/echo-plugin/build.xcconfig`, add a value for `PLUGIN_NAMESPACE`. The plugin needs to have a new name, if not it will not be loaded properly due to a symbol conflict. For example, you could add a version:
+
+    PLUGIN_NAMESPACE = v1_0_0
+
+This will in turn change the name of the class from `EchoPlugin` to `v1_0_0EchoPlugin`
+
+Once you do that, you can run `npm run package` to package your plugin for syncing, and run `npm run httpserver` to serve it.
