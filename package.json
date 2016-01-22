@@ -6,10 +6,11 @@
   "main": "index.js",
   "scripts": {
 	  
+	"deploy" : "pushd demo-app && cordova run --device -- --no-wifi > /dev/null && popd",
+	  
 	"build": "npm run build-plugin && npm run build-app",
 	    "build-plugin" : "pushd echo-plugin && npm run build > /dev/null && popd",
 	    "build-app" : "pushd demo-app && cordova prepare && cordova build --device > /dev/null && popd",
-		"postbuild" : "",
 	
 	"package" : "npm run package-plugin && npm run package-app",
 	    "package-app" : "pushd demo-app && zip -r ../package.zip www && popd",
