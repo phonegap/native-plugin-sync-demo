@@ -26,6 +26,8 @@
 	    "codesign-verify-plugin" : "pushd echo-plugin && npm run codesign-verify && popd",
 		"precodesign-verify" : "npm run build > /dev/null",
 		
+	"codesign-identities" : "security find-identity -v -p codesigning",
+
 	"httpserver" : "echo `ipconfig getifaddr en0`:8080 && python -m SimpleHTTPServer 8080"
 
   },
