@@ -4,6 +4,12 @@ This demo demonstrates how to sync up native plugin code for Apache Cordova. The
 
 ## Commands
 
+    npm run deploy
+
+Builds the necessary `demo-app` and deploys it to your attached iOS device. The terminal will log messages to the `lldb` debugger; enter `safequit` to terminate.
+
+---
+
 
     npm run build
 
