@@ -29,7 +29,7 @@ document.getElementById("echo-test-button").addEventListener("click",
 document.getElementById("contentsync-test-button").addEventListener("click", contentSync);
 
 function contentSync() {
-	var package_server = '192.168.1.42:8080';
+    var package_server = '192.168.1.42:8080';
     var sync = ContentSync.sync({ src: 'http://' + package_server + '/package.zip', id: 'plugins-2', loadNativePlugins: true });
     
     sync.on('progress', function(data) {
