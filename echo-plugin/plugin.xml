@@ -35,6 +35,7 @@
                 <param name="ios-package" value="EchoPlugin"/>
             </feature>
         </config-file>
+        <header-file src="echo-plugin/namespacing.h" />
         <header-file src="echo-plugin/EchoPlugin.h" />
         <source-file src="echo-plugin/EchoPlugin.m" />
     </platform>
