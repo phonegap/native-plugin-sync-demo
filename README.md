@@ -51,6 +51,8 @@ Run this to see all the codesigning identities available on your machine.
 
 Runs a simple http server for the demo at port 8080.
 
+Grab the first line with the IP address and port, and modify this line in [www/js/index.js](https://github.com/phonegap/native-plugin-sync-demo/blob/361242fdbb9253f265578fec17762c71d843a901/demo-app/www/js/index.js#L32) -- replace that variable's value with your value.
+
 
 ## Updating a Plugin
 
