@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
 
-    "deploy": "pushd demo-app && cordova build --device > /dev/null && popd && node_modules/.bin/ios-deploy -d -b demo-app/platforms/ios/build/device/demo-app.app --no-wifi",
+    "deploy": "npm run build && node_modules/.bin/ios-deploy -d -b demo-app/platforms/ios/build/device/demo-app.app --no-wifi",
 	    "predeploy" : "npm install",
 
     "build": "npm run build-plugin && npm run build-app",
