@@ -5,31 +5,24 @@
   "private": true,
   "main": "index.js",
   "scripts": {
-
-    "deploy": "npm run build && node_modules/.bin/ios-deploy -d -b demo-app/platforms/ios/build/device/demo-app.app --no-wifi",
-	    "predeploy" : "npm install",
-
+    "deploy": "node_modules/.bin/ios-deploy -d -b demo-app/platforms/ios/build/device/demo-app.app --no-wifi",
+        "predeploy": "npm install && npm run build > /dev/null",
     "build": "npm run build-plugin && npm run build-app",
         "build-plugin": "pushd echo-plugin && npm run build > /dev/null && popd",
-        "build-app": "pushd demo-app && cordova prepare && cordova build --device > /dev/null && popd",
-		
+        "build-app": "pushd demo-app && ../node_modules/.bin/cordova prepare && ../node_modules/.bin/cordova build --device > /dev/null && popd",
     "package": "npm run package-plugin && npm run package-app",
         "package-app": "pushd demo-app && zip -r ../package.zip www && popd",
         "package-plugin": "pushd echo-plugin/build && zip -r ../../package.zip echo.cdvplugin && popd",
         "prepackage": "npm run build > /dev/null",
-		
     "codesign-info": "npm run codesign-info-plugin && npm run codesign-info-app",
         "codesign-info-app": "codesign -vv -d demo-app/platforms/ios/build/device/demo-app.app",
         "codesign-info-plugin": "pushd echo-plugin && npm run codesign-info && popd",
         "precodesign-info": "npm run build > /dev/null",
-		
     "codesign-verify": "npm run codesign-verify-plugin && npm run codesign-verify-app",
         "codesign-verify-app": "codesign --verify demo-app/platforms/ios/build/device/demo-app.app",
         "codesign-verify-plugin": "pushd echo-plugin && npm run codesign-verify && popd",
         "precodesign-verify": "npm run build > /dev/null",
-		
     "codesign-identities": "security find-identity -v -p codesigning",
-	
     "httpserver": "echo `ipconfig getifaddr en0`:8080 && python -m SimpleHTTPServer 8080"
   },
   "repository": {
@@ -43,6 +36,7 @@
   },
   "homepage": "https://github.com/shazron/native-plugin-sync-demo#readme",
   "devDependencies": {
+    "cordova": "^5.4.1",
     "ios-deploy": "^1.8.4"
   }
 }
