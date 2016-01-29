@@ -2,6 +2,16 @@
 
 This demo demonstrates how to sync up native plugin code for Apache Cordova. The `demo-app` uses the `echo-plugin` as well as a custom version of `phonegap-plugin-contentsync`.
 
+## Running the Demo
+
+1. In a new Terminal tab, run `npm run httpserver`
+2. Copy the IP address and port from (2) into line 32 of `npm run edit-server-js`
+3. `npm run deploy` - this builds and deploys the app to your device
+4. `npm run edit-echo-plugin` - edit `build.xcconfig` `PLUGIN_NAMESPACE` (i.e `v1_1_0`)
+5. `npm run package` to package up the edited plugin
+6. Press the `Content Sync` button on the app
+
+
 ## Commands
 
     npm run deploy
