@@ -24,7 +24,9 @@
         "precodesign-verify": "npm run build > /dev/null",
     "codesign-identities": "security find-identity -v -p codesigning",
     "httpserver": "echo `ipconfig getifaddr en0`:8080 && python -m SimpleHTTPServer 8080",
-	"bake-a-cake" : "open http://shaz.io/2014/09/01/fruit-topped-spongecake/"
+	"bake-a-cake" : "open http://shaz.io/2014/09/01/fruit-topped-spongecake/",
+	"edit-server-js" : "open demo-app/www/js/index.js",
+	"edit-echo-plugin" : "open -a Xcode echo-plugin"
   },
   "repository": {
     "type": "git",
